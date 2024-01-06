@@ -16,6 +16,39 @@
     <script src="js/main.js"></script>
     <script src="js/scroll.js"></script>
     <script async type="text/javascript" src="js/google.js"></script>
+    <script>
+      var step_nbr = 2;
+      var min_nbr = 6;
+      
+      $('.tabNav ul').each(function() {
+        var LiN = $(this).find('li').length;
+        if (LiN > 3) {
+          $('li', this).eq(5).nextAll().hide().addClass('toggleable');
+          $(this).append('<li class="more">More...</li>');
+        }
+      });
+      
+      $('.tabNav ul').on('click', '.more', function() {
+        var visible_lis = $('.tabNav ul li:visible').length;
+      
+        if ($(this).hasClass('less')) {
+      
+          $(this).prevAll('li:not(.toggleable)').slice(0, step_nbr).addClass('toggleable').hide();
+      
+          if ($('li:visible').length <= (min_nbr + 1)) {
+            $(this).text('More...').removeClass('less');
+          }
+      
+        } else {
+          $(this).siblings('li.toggleable').slice(0, step_nbr).removeClass('toggleable').show();
+      
+          if ($('li.toggleable').length == 0) {
+            $(this).text('Less...').addClass('less');
+          }
+        }
+      
+      });
+    </script>
 
   <script src='/google_analytics_auto.js'></script></head>
 
@@ -67,11 +100,11 @@
           </div>
         </div>
   
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-        <div class="content" style="z-index:1;position:relative">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <div class="tabNav" style="z-index:1;position:relative">
           <div class="text">
             <h3 style="margin-bottom:.5em">News</h3>
-            <ul class="list" style="padding-bottom:1em">
+            <ul style="padding-bottom:1em">
               <li>One <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Majhi_OE-CTST_Outlier-Embedded_Cross_Temporal_Scale_Transformer_for_Weakly-Supervised_Video_Anomaly_WACV_2024_paper.pdf">paper</a> was accpedted by WACV 2024.</li>
               <li>One <a href="https://arxiv.org/pdf/2305.06437.pdf">paper</a> is accepted by AAAI 2023</li>
               <li>One <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_LAC_-_Latent_Action_Composition_for_Skeleton-based_Action_Segmentation_ICCV_2023_paper.pdf">paper</a> was accepted by ICCV 2023.</li>
@@ -83,9 +116,6 @@
               <li>One <a href="https://proceedings.neurips.cc/paper/2020/file/5c9452254bccd24b8ad0bb1ab4408ad1-Paper.pdf">paper</a> was accepted by NeruIPS 2020.</li>
               <li>Large-scale multi-modal video action understanding dataset <a href="https://mmact19.github.io/2019/">MMAct</a> has been released for using !</a>
             </ul>
-            <div class="list-btn">
-              <button>More</button>
-            </div>
           </div>
         </div>
 
