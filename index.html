@@ -85,7 +85,7 @@
               <li>One <a href="https://proceedings.neurips.cc/paper/2020/file/5c9452254bccd24b8ad0bb1ab4408ad1-Paper.pdf">paper</a> was accepted by NeruIPS 2020.</li>
               <li>Large-scale multi-modal video action understanding dataset <a href="https://mmact19.github.io/2019/">MMAct</a> has been released for using !</a>
             </ul>
-            <button id="load-more">More...</button>
+            <div class="text" id="load-more">More...</div>
           </div>
         </div>
 
@@ -806,7 +806,7 @@
         const itemList = document.getElementById("item-list");
         const loadMoreButton = document.getElementById("load-more");
         const listItems = itemList.querySelectorAll("li");
-        let visibleItems = 3; // Initially show 3 items, change this number as needed
+        let visibleItems = 5; // Initially show 3 items, change this number as needed
 
         function toggleListItems() {
             for (let i = 0; i < listItems.length; i++) {
