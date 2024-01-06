@@ -18,17 +18,7 @@
 
     <script src='js/google_analytics_auto.js'></script>
     <script src='js/showmore.js'></script>
-    <script>
-    text$(function(){
-    $('.content:not(.content:first-of-type)').css('display','none');//一番上の要素以外を非表示
-    $('.more').nextAll('.more').css('display','none');//ボタンを非表示
-    $('.more').on('click', function() {
-    $(this).css('display','none');//押したボタンを非表示
-    $(this).next('.content').slideDown('fast');
-    $(this).nextAll('.more:first').css('display','block'); //次のボタンを表示
-    });
-    });
-    <\script>
+
   </head>
 
   <body>
@@ -71,7 +61,7 @@
           <div class="text">
             <p>I am a staff research scientist at <a href="https://www.woven-planet.global/jp">Woven by Toyota, Inc.</a> working on computer vision.
             My concentric is about Machine Learning and the usage of it on Computer Vision, Ubiquitous Computing and Multi-Modal Perception.
-            Before working at Woven by Toyotam Inc. (Before: Woven Planet Holdings, Inc.), I was a senior researcher of <a href=https://www.hitachi.com/rd/>Hitachi, Ltd. R&D Japan</a> 
+            Before working at Woven by Toyotam Inc., I was a senior researcher of <a href=https://www.hitachi.com/rd/>Hitachi, Ltd. R&D Japan</a> 
             working on large scale surveillance video analysis system, and a visiting researcher of <a href="https://www.atr.jp/">Department of DBI</a> at <a href="https://www.atr.jp/">ATR</a> working on home automation.
             I finished my Ph.D. and M.S. at <a href="https://www.ist.osaka-u.ac.jp/english/">Osaka University</a>,
             advised by <a href="http://www-nishio.ist.osaka-u.ac.jp/~maekawa/index-e.html">Takuya Maekawa</a>, Norihisa Komoda
@@ -96,14 +86,6 @@
               <li>Large-scale multi-modal video action understanding dataset <a href="https://mmact19.github.io/2019/">MMAct</a> has been released for using !</a>
             </ul>
           </div>
-        </div>
-        <div class="more">More...</div>
-        <div class="content">
-            <ul>
-                <li>りんご</li>
-                <li>なし</li>
-                <li>みかん</li>
-            </ul>
         </div>
 
         <div class="content" style="z-index:1;position:relative">
