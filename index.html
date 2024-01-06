@@ -38,7 +38,7 @@
           <div class="text info">
             <h1>Quan Kong</h1>
             <p/>
-            <div>Staff Researcher Scientist</div>
+            <div>Staff Research Scientist</div>
             <div>Woven by Toyota, Inc.</div>
             <div>Email:&nbsp;</td><td>quan.kong [at] woven-planet (dot) global</div>
             <p/>
@@ -57,7 +57,7 @@
             <p/>
           </div>
           <div class="text">
-            <p>I am a staff researcher scientist at <a href="https://www.woven-planet.global/jp">Woven by Toyota, Inc.</a> working on computer vision.
+            <p>I am a staff research scientist at <a href="https://www.woven-planet.global/jp">Woven by Toyota, Inc.</a> working on computer vision.
             My concentric is about Machine Learning and the usage of it on Computer Vision, Ubiquitous Computing and Multi-Modal Perception.
             Before working at Woven by Toyotam Inc. (Before: Woven Planet Holdings, Inc.), I was a senior researcher of <a href=https://www.hitachi.com/rd/>Hitachi, Ltd. R&D Japan</a> 
             working on large scale surveillance video analysis system, and a visiting researcher of <a href="https://www.atr.jp/">Department of DBI</a> at <a href="https://www.atr.jp/">ATR</a> working on home automation.
@@ -67,8 +67,40 @@
           </div>
         </div>
 
+        var step_nbr = 2;
+        var min_nbr = 6;
+        
+        $('.tabNav ul').each(function() {
+          var LiN = $(this).find('li').length;
+          if (LiN > 3) {
+            $('li', this).eq(5).nextAll().hide().addClass('toggleable');
+            $(this).append('<li class="more">More...</li>');
+          }
+        });
+        
+        $('.tabNav ul').on('click', '.more', function() {
+          var visible_lis = $('.tabNav ul li:visible').length;
+        
+          if ($(this).hasClass('less')) {
+        
+            $(this).prevAll('li:not(.toggleable)').slice(0, step_nbr).addClass('toggleable').hide();
+        
+            if ($('li:visible').length <= (min_nbr + 1)) {
+              $(this).text('More...').removeClass('less');
+            }
+        
+          } else {
+            $(this).siblings('li.toggleable').slice(0, step_nbr).removeClass('toggleable').show();
+        
+            if ($('li.toggleable').length == 0) {
+              $(this).text('Less...').addClass('less');
+            }
+          }
+        
+        });
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <div class="content" style="z-index:1;position:relative">
+        <div class="tabNav" style="z-index:1;position:relative">
           <div class="text">
             <h3 style="margin-bottom:.5em">News</h3>
             <ul style="padding-bottom:1em">
