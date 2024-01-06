@@ -66,55 +66,26 @@
             and <a href="http://www-infobiz.ist.osaka-u.ac.jp/en/member/matsushita/">Yasuyuki Matsushita</a>, and my undergraduate degrees at <a href="http://en.xjtu.edu.cn">Xi'an Jiao Tong University</a>.</p>
           </div>
         </div>
-
-        var step_nbr = 2;
-        var min_nbr = 6;
-        
-        $('.tabNav ul').each(function() {
-          var LiN = $(this).find('li').length;
-          if (LiN > 3) {
-            $('li', this).eq(5).nextAll().hide().addClass('toggleable');
-            $(this).append('<li class="more">More...</li>');
-          }
-        });
-        
-        $('.tabNav ul').on('click', '.more', function() {
-          var visible_lis = $('.tabNav ul li:visible').length;
-        
-          if ($(this).hasClass('less')) {
-        
-            $(this).prevAll('li:not(.toggleable)').slice(0, step_nbr).addClass('toggleable').hide();
-        
-            if ($('li:visible').length <= (min_nbr + 1)) {
-              $(this).text('More...').removeClass('less');
-            }
-        
-          } else {
-            $(this).siblings('li.toggleable').slice(0, step_nbr).removeClass('toggleable').show();
-        
-            if ($('li.toggleable').length == 0) {
-              $(this).text('Less...').addClass('less');
-            }
-          }
-        
-        });
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <div class="tabNav" style="z-index:1;position:relative">
+  
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <div class="content" style="z-index:1;position:relative">
           <div class="text">
             <h3 style="margin-bottom:.5em">News</h3>
-            <ul style="padding-bottom:1em">
-              <li>One <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Majhi_OE-CTST_Outlier-Embedded_Cross_Temporal_Scale_Transformer_for_Weakly-Supervised_Video_Anomaly_WACV_2024_paper.pdf">paper</a> is accpedted by WACV 2024.</li>
+            <ul class="list" style="padding-bottom:1em">
+              <li>One <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Majhi_OE-CTST_Outlier-Embedded_Cross_Temporal_Scale_Transformer_for_Weakly-Supervised_Video_Anomaly_WACV_2024_paper.pdf">paper</a> was accpedted by WACV 2024.</li>
               <li>One <a href="https://arxiv.org/pdf/2305.06437.pdf">paper</a> is accepted by AAAI 2023</li>
-              <li>One <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_LAC_-_Latent_Action_Composition_for_Skeleton-based_Action_Segmentation_ICCV_2023_paper.pdf">paper</a> is accepted by ICCV 2023.</li>
-              <li>One <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Yang_DeCo_Decomposition_and_Reconstruction_for_Compositional_Temporal_Grounding_via_Coarse-To-Fine_CVPR_2023_paper.pdf">paper</a> is accepted by CVPR 2023.</li>
+              <li>One <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_LAC_-_Latent_Action_Composition_for_Skeleton-based_Action_Segmentation_ICCV_2023_paper.pdf">paper</a> was accepted by ICCV 2023.</li>
+              <li>One <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Yang_DeCo_Decomposition_and_Reconstruction_for_Compositional_Temporal_Grounding_via_Coarse-To-Fine_CVPR_2023_paper.pdf">paper</a> was accepted by CVPR 2023.</li>
               <li>My previous work about automatic baggage screening system in Hitachi was honored with <a href="https://www.ai-gakkai.or.jp/about/award/">Field Innovation Award</a> from JSAI.</li>
               <li>Joined Woven Planet Holdings from Mar. 2022 working on <a href="https://www.woven-city.global/">Toyota Woven City</a>, a smart city located around Mt.Fuji.</li>
               <li><a href="https://mmact19.github.io/challenge/">MMAct Challenge</a> will be held on CVPR2021 in conjunction with <a href="http://activity-net.org/challenges/2021/index.html">ActivityNet workshop</a>.</li>
               <li>Our team (VAS) achieved Top level results on <a href="https://www-nlpir.nist.gov/projects/tvpubs/tv20.slides/tv20.dsdi.slides.pdf">TRECVID2020 DSDI task</a>.
-              <li>One <a href="https://proceedings.neurips.cc/paper/2020/file/5c9452254bccd24b8ad0bb1ab4408ad1-Paper.pdf">paper</a> is accepted by NeruIPS 2020.</li>
+              <li>One <a href="https://proceedings.neurips.cc/paper/2020/file/5c9452254bccd24b8ad0bb1ab4408ad1-Paper.pdf">paper</a> was accepted by NeruIPS 2020.</li>
               <li>Large-scale multi-modal video action understanding dataset <a href="https://mmact19.github.io/2019/">MMAct</a> has been released for using !</a>
             </ul>
+            <div class="list-btn">
+              <button>More</button>
+            </div>
           </div>
         </div>
 
@@ -130,6 +101,7 @@
               <li>Real World Context Recognition and Its Application for Supporting Interaction in Smart Environment (Ph.D. Thesis)</li>
             </ul>
           </div>
+          
         </div>
 
 <!--         <div class="content" style="z-index:1;position:relative">
