@@ -99,6 +99,7 @@
               <li>Image Classification/Segmentation for Automatic X-ray Baggage Screening System</li>
               <li>Real World Context Recognition and Its Application for Supporting Interaction in Smart Environment (Ph.D. Thesis)</li>
             </ul>
+            <button id="load-more">More...</button>
           </div>
           
         </div>
@@ -801,6 +802,35 @@
 
     <script>showPubs(0);</script>
     <script>var scroll = new SmoothScroll('a[href*="#"]', {speed: 1000});</script>
+    <script>
+        const itemList = document.getElementById("item-list");
+        const loadMoreButton = document.getElementById("load-more");
+        const listItems = itemList.querySelectorAll("li");
+        let visibleItems = 3; // Initially show 3 items, change this number as needed
+
+        function toggleListItems() {
+            for (let i = 0; i < listItems.length; i++) {
+                if (i < visibleItems) {
+                    listItems[i].style.display = "block";
+                } else {
+                    listItems[i].style.display = "none";
+                }
+            }
+
+            if (visibleItems < listItems.length) {
+                loadMoreButton.style.display = "block";
+            } else {
+                loadMoreButton.style.display = "none";
+            }
+        }
+
+        loadMoreButton.addEventListener("click", () => {
+            visibleItems += 3; // Increase the number of visible items by 3
+            toggleListItems();
+        });
+
+        toggleListItems(); // Initially display the first set of items
+    </script>
 
   </body>
 
