@@ -806,7 +806,7 @@
         const itemList = document.getElementById("item-list");
         const loadMoreButton = document.getElementById("load-more");
         const listItems = itemList.querySelectorAll("li");
-        let visibleItems = 5; // Initially show 3 items, change this number as needed
+        let visibleItems = 5;
 
         function toggleListItems() {
             for (let i = 0; i < listItems.length; i++) {
@@ -825,11 +825,11 @@
         }
 
         loadMoreButton.addEventListener("click", () => {
-            visibleItems += 3; // Increase the number of visible items by 3
+            visibleItems += 5;
             toggleListItems();
         });
 
-        toggleListItems(); // Initially display the first set of items
+        toggleListItems();
     </script>
 
   </body>
