@@ -27,8 +27,8 @@ function showPubs(id) {
     document.getElementById('pubs').innerHTML = document.getElementById('pubs_selected').innerHTML;
     document.getElementById('select0').style = 'text-decoration:underline;color:#000000';
     document.getElementById('select1').style = '';
-    // document.getElementById('select2').style = '';
-  } else {
+    document.getElementById('select2').style = '';
+  } else if (id == 1) {
     document.getElementById('pubs').innerHTML = document.getElementById('pubs_all').innerHTML;
     document.getElementById('select1').style = 'text-decoration:underline;color:#000000';
     document.getElementById('select0').style = '';
