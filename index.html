@@ -73,7 +73,7 @@
         <div class="content" style="z-index:1;position:relative">
           <div class="text">
             <h3 style="margin-bottom:.5em">News</h3>
-            <ul style="padding-bottom:1em; list-style-type: disc; margin-left: 20px;" id="item-list">
+            <ul id="item-list">
               <li>One <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Majhi_OE-CTST_Outlier-Embedded_Cross_Temporal_Scale_Transformer_for_Weakly-Supervised_Video_Anomaly_WACV_2024_paper.pdf">paper</a> was accepted by WACV 2024.</li>
               <li>One <a href="https://arxiv.org/pdf/2305.06437.pdf">paper</a> was accepted by AAAI 2023.</li>
               <li>One <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_LAC_-_Latent_Action_Composition_for_Skeleton-based_Action_Segmentation_ICCV_2023_paper.pdf">paper</a> was accepted by ICCV 2023.</li>
@@ -504,6 +504,18 @@
       </div> <!-- container -->
     </div> <!-- outer container -->
 
+    <style>
+      /* Ensure bullet points are visible */
+      #item-list {
+        list-style-type: disc !important;  /* Force bullets */
+        padding-left: 20px;  /* Add spacing for better visibility */
+      }
+      
+      /* Ensure the list items are not affected by conflicting styles */
+      #item-list li {
+        display: list-item !important;  /* Ensure proper list behavior */
+      }
+    </style>
     <script>showPubs(0);</script>
     <script>var scroll = new SmoothScroll('a[href*="#"]', {speed: 1000});</script>
     <script>
