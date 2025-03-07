@@ -513,11 +513,11 @@
         padding-left: 20px;  /* Add spacing for better visibility */
       }
       
-      /* Ensure the list items are not affected by conflicting styles */
       #item-list li {
-        display: list-item !important;  /* Ensure proper list behavior */
+        display: none;
       }
     </style>
+    
     <script>showPubs(0);</script>
     <script>var scroll = new SmoothScroll('a[href*="#"]', {speed: 1000});</script>
     <script>
@@ -526,9 +526,6 @@
         let itemsToShow = 6; // Show first 6 items initially
         let totalItems = items.length;
         let currentIndex = 0;
-    
-        // Hide all items initially
-        items.hide();
     
         // Show first set of items
         items.slice(0, itemsToShow).show();
