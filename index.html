@@ -519,33 +519,30 @@
     <script>showPubs(0);</script>
     <script>var scroll = new SmoothScroll('a[href*="#"]', {speed: 1000});</script>
     <script>
-        const itemList = document.getElementById("item-list");
-        const loadMoreButton = document.getElementById("load-more");
-        const listItems = itemList.querySelectorAll("li");
-        let visibleItems = 5;
-
-        function toggleListItems() {
-            for (let i = 0; i < listItems.length; i++) {
-                if (i < visibleItems) {
-                    listItems[i].style.display = "block";
-                } else {
-                    listItems[i].style.display = "none";
-                }
-            }
-
-            if (visibleItems < listItems.length) {
-                loadMoreButton.style.display = "block";
-            } else {
-                loadMoreButton.style.display = "none";
-            }
-        }
-
-        loadMoreButton.addEventListener("click", () => {
-            visibleItems += 5;
-            toggleListItems();
+      $(document).ready(function(){
+        let items = $("#item-list li");
+        let itemsToShow = 6; // Show first 6 items initially
+        let totalItems = items.length;
+        let currentIndex = 0;
+    
+        // Hide all items initially
+        items.hide();
+    
+        // Show first set of items
+        items.slice(0, itemsToShow).show();
+        currentIndex = itemsToShow;
+    
+        $("#load-more").click(function(){
+          // Show next batch of items
+          items.slice(currentIndex, currentIndex + itemsToShow).fadeIn();
+          currentIndex += itemsToShow;
+    
+          // Hide "More..." button if all items are shown
+          if (currentIndex >= totalItems) {
+            $("#load-more").hide();
+          }
         });
-
-        toggleListItems();
+      });
     </script>
 
   </body>
